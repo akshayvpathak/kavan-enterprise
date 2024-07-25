@@ -11,10 +11,10 @@ export default function Home() {
   const words = `Kavan Enterprise specializes in creating machinery, ceramic products, and agricultural red mitty products.`
 
   return (
-    <AuroraBackground>
+    <div>
       <Navbar />
 
-      <div className="mx-auto mt-4 w-fit rounded-full bg-black px-6 py-2 pt-16 text-base text-zinc-50 shadow-xl">
+      <div className="mx-auto mt-16 mt-4 w-fit rounded-full bg-black px-6 py-2 text-base text-zinc-50 shadow-xl">
         ✨ Range of products ✨
       </div>
       <div className="mt-4">
@@ -38,6 +38,6 @@ export default function Home() {
         </h5>
         <Location />
       </div>
-    </AuroraBackground>
+    </div>
   )
 }

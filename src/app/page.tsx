@@ -1,34 +1,14 @@
-import { AuroraBackground } from "@/components/ui/aurora-background"
-import { FlipWords } from "@/components/ui/flip-words"
-import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight"
-import { SparklesCore } from "@/components/ui/sparkles"
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
-import { Vortex } from "@/components/ui/vortex"
 import Feedback from "@/components/common/Feedback"
 import Location from "@/components/common/Location"
 import { Navbar } from "@/components/common/NavBar"
 import { ProductList } from "@/components/common/ProductList"
 
 export default function Home() {
-  const words = `Kavan Enterprise specializes in creating machinery, ceramic products, and agricultural red mitty products.`
-
   return (
     <div>
       <Navbar />
 
-      <div className=" flex items-center justify-center px-4">
-        <div className="relative mx-auto mb-8 mt-4 max-w-6xl text-center text-4xl font-bold !leading-snug text-zinc-700 md:text-4xl ">
-          Buy
-          <FlipWords words={["Machinery", "Ceramics", "Agriculture"]} />{" "}
-          Products
-          <br />
-          <span className="relative z-10 bg-gradient-to-t from-emerald-600 to-emerald-600/[0.8] bg-clip-text text-transparent">
-            with Kavan Enterprise
-          </span>
-        </div>
-      </div>
-
-      <div className="w-100 mt-12 flex w-full flex-col items-center justify-center overflow-hidden bg-transparent ">
+      <div className="w-100  mt-14 flex w-full flex-col items-center justify-center overflow-hidden bg-transparent ">
         <h1 className="relative z-20 text-center text-3xl font-bold text-neutral-700 md:text-3xl lg:text-3xl">
           Kavan Enterprise
         </h1>

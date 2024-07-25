@@ -35,26 +35,7 @@ export default function Home() {
           </span>
         </div>
       </div>
-      <div className="mx-auto h-[30rem] w-[calc(100%-4rem)] overflow-hidden rounded-md">
-        <Vortex
-          backgroundColor="black"
-          className="flex h-full w-full flex-col items-center justify-center px-2 py-4 md:px-10"
-        >
-          <h2 className="text-center text-2xl font-bold text-zinc-50 md:text-6xl">
-            Discover Innovation at Kavan Enterprise
-          </h2>
-          <p className="mt-6 max-w-xl text-center text-sm text-white md:text-2xl">
-            At Kavan Enterprise, we pioneer in the creation of advanced
-            machinery, cutting-edge ceramic products, and sustainable
-            agricultural solutions.
-          </p>
-          <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row">
-            <button className="rounded-lg bg-blue-600 px-4 py-2 text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset] transition duration-200 hover:bg-blue-700">
-              Contact Us
-            </button>
-          </div>
-        </Vortex>
-      </div>
+   
       <div className="w-100 mt-12 flex w-full flex-col items-center justify-center overflow-hidden bg-transparent ">
         <h1 className="relative z-20 text-center text-3xl font-bold text-neutral-700 md:text-3xl lg:text-3xl">
           Kavan Enterprise
@@ -67,14 +48,7 @@ export default function Home() {
           <div className="absolute inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
 
           {/* Core component */}
-          <SparklesCore
-            background="transparent"
-            minSize={0.4}
-            maxSize={1}
-            particleDensity={1200}
-            className="h-full w-full"
-            particleColor="#000"
-          />
+      
 
           {/* Radial Gradient to prevent sharp edges */}
           <div className="absolute inset-0 h-full w-full bg-transparent [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>

@@ -1,6 +1,6 @@
 import Feedback from "@/components/common/Feedback"
 import Location from "@/components/common/Location"
-import { Navbar } from "@/components/common/NavBar"
+import Navbar from "@/components/common/NavBar"
 import { ProductList } from "@/components/common/ProductList"
 
 export default function Home() {

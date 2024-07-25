@@ -15,15 +15,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <HeroHighlight className="bg-transparent pt-16">
-        <h1 className="mx-auto max-w-4xl px-4 text-center text-2xl font-bold leading-relaxed text-neutral-700 dark:text-white md:text-4xl lg:text-5xl lg:leading-snug">
-          Discover innovation with Kavan Enterprise{" "}
-          <Highlight className="text-black dark:text-white">
-            in machinery, ceramics, and agriculture products.
-          </Highlight>
-        </h1>
-        <TextGenerateEffect words={words} />
-      </HeroHighlight>
+
       <div className=" flex items-center justify-center px-4">
         <div className="relative mx-auto mb-8 mt-4 max-w-6xl text-center text-4xl font-bold !leading-snug text-zinc-700 md:text-4xl ">
           Buy
@@ -35,7 +27,7 @@ export default function Home() {
           </span>
         </div>
       </div>
-   
+
       <div className="w-100 mt-12 flex w-full flex-col items-center justify-center overflow-hidden bg-transparent ">
         <h1 className="relative z-20 text-center text-3xl font-bold text-neutral-700 md:text-3xl lg:text-3xl">
           Kavan Enterprise
@@ -48,7 +40,6 @@ export default function Home() {
           <div className="absolute inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
 
           {/* Core component */}
-      
 
           {/* Radial Gradient to prevent sharp edges */}
           <div className="absolute inset-0 h-full w-full bg-transparent [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>

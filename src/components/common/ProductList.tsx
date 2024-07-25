@@ -190,9 +190,8 @@ const products = [
 
 const ProductCard: FC<any> = ({ product }) => {
   return (
-    <BackgroundGradient
+    <div
       className="mx-auto w-[15rem] rounded-[22px] bg-white p-4 dark:bg-zinc-900 sm:p-10 md:w-[17rem]"
-      containerClassName="w-[15.5rem] mx-auto md:w[17.5] flex justify-center"
     >
       <Image
         src={product.image}
@@ -210,7 +209,7 @@ const ProductCard: FC<any> = ({ product }) => {
       {/* <button className="mt-4 flex items-center space-x-1 rounded-full bg-black py-1 pl-4 pr-1 text-xs font-bold text-white dark:bg-zinc-800">
         <span>Send Inquiry</span>
       </button> */}
-    </BackgroundGradient>
+    </div>
   )
 }
 

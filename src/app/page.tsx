@@ -2,8 +2,6 @@ import { AuroraBackground } from "@/components/ui/aurora-background"
 import { FlipWords } from "@/components/ui/flip-words"
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight"
 import { SparklesCore } from "@/components/ui/sparkles"
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
-import { Vortex } from "@/components/ui/vortex"
 import Feedback from "@/components/common/Feedback"
 import Location from "@/components/common/Location"
 import { Navbar } from "@/components/common/NavBar"
@@ -22,7 +20,6 @@ export default function Home() {
             in machinery, ceramics, and agriculture products.
           </Highlight>
         </h1>
-        <TextGenerateEffect words={words} />
       </HeroHighlight>
       <div className=" flex items-center justify-center px-4">
         <div className="relative mx-auto mb-8 mt-4 max-w-6xl text-center text-4xl font-bold !leading-snug text-zinc-700 md:text-4xl ">
@@ -35,26 +32,7 @@ export default function Home() {
           </span>
         </div>
       </div>
-      <div className="mx-auto h-[30rem] w-[calc(100%-4rem)] overflow-hidden rounded-md">
-        <Vortex
-          backgroundColor="black"
-          className="flex h-full w-full flex-col items-center justify-center px-2 py-4 md:px-10"
-        >
-          <h2 className="text-center text-2xl font-bold text-zinc-50 md:text-6xl">
-            Discover Innovation at Kavan Enterprise
-          </h2>
-          <p className="mt-6 max-w-xl text-center text-sm text-white md:text-2xl">
-            At Kavan Enterprise, we pioneer in the creation of advanced
-            machinery, cutting-edge ceramic products, and sustainable
-            agricultural solutions.
-          </p>
-          <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row">
-            <button className="rounded-lg bg-blue-600 px-4 py-2 text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset] transition duration-200 hover:bg-blue-700">
-              Contact Us
-            </button>
-          </div>
-        </Vortex>
-      </div>
+
       <div className="w-100 mt-12 flex w-full flex-col items-center justify-center overflow-hidden bg-transparent ">
         <h1 className="relative z-20 text-center text-3xl font-bold text-neutral-700 md:text-3xl lg:text-3xl">
           Kavan Enterprise

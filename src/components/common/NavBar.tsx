@@ -1,126 +1,144 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
+import React, { useState } from "react";
+import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+  Link,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+} from "@nextui-org/react";
 
-// Define the links including the nested links for the "Products" and "Machinery" dropdowns
-const links = [
-  { href: "/", label: "Home" },
-  {
-    href: "/Machinery",
-    label: "Machinery",
-    submenu: [
-      { href: "/Machinery/DiyaMakingMachine", label: "Diya Making Machine" },
-      {
-        href: "/Machinery/KulladMakingMachine",
-        label: "Kullad Making Machine",
-      },
-      { href: "/Machinery/SurakiMachine", label: "Suraki Machine" },
-      {
-        href: "/Machinery/HydraulicDiyaMakingMachine",
-        label: "Hydraulic Diya Making Machine",
-      },
-    ],
-  },
-  {
-    href: "/Products",
-    label: "Products",
-    submenu: [
-      { href: "/Products/RedMittiProducts", label: "Red Mitti Products" },
-      { href: "/Products/CeramicProducts", label: "Ceramic Products" },
-      { href: "/Products/DecorativeProducts", label: "Decorative Products" },
-    ],
-  },
-  { href: "/contact", label: "Contact" },
-]
+import { AcmeLogo } from "./AcmeLogo";
+import {
+  Activity,
+  ChevronDown,
+  Flash,
+  Lock,
+  Scale,
+  Server,
+  TagUser,
+} from "./Icons";
 
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [dropdown, setDropdown] = useState<string | null>(null)
+const Navbar1: React.FC = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
-  const handleToggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+  const icons = {
+    chevron: <ChevronDown fill="currentColor" size={16} />,
+    scale: <Scale className="text-warning" fill="currentColor" size={30} />,
+    lock: <Lock className="text-success" fill="currentColor" size={30} />,
+    activity: (
+      <Activity className="text-secondary" fill="currentColor" size={30} />
+    ),
+    flash: <Flash className="text-primary" fill="currentColor" size={30} />,
+    server: <Server className="text-success" fill="currentColor" size={30} />,
+    user: <TagUser className="text-danger" fill="currentColor" size={30} />,
+  };
 
-  const handleMouseEnter = (label: string) => {
-    setDropdown(label)
-  }
+  const handleMouseEnter = () => {
+    setIsDropdownOpen(true);
+  };
 
   const handleMouseLeave = () => {
-    setDropdown(null)
-  }
+    setIsDropdownOpen(false);
+  };
 
   return (
-    <nav className="bg-gray-800 p-4 text-white">
-      <div className="container mx-auto flex items-center justify-between">
-        <div className="text-2xl font-bold">
-          <Link href="/">Kavan Enterprise</Link>
-        </div>
-        <div className="hidden space-x-10 md:flex">
-          {links.map((link) => (
-            <div
-              key={link.href}
-              className="relative"
-              onMouseEnter={() => handleMouseEnter(link.label)}
-              onMouseLeave={handleMouseLeave}
+    <Navbar>
+      <NavbarBrand>
+        <AcmeLogo />
+        <p className="font-bold text-inherit">ACME</p>
+      </NavbarBrand>
+      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <Dropdown isOpen={isDropdownOpen}>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className="bg-transparent p-0 data-[hover=true]:bg-transparent"
+                endContent={icons.chevron}
+                radius="sm"
+                variant="light"
+              >
+                Features
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu
+              aria-label="ACME features"
+              className="w-[340px]"
+              itemClasses={{
+                base: "gap-4",
+              }}
             >
-              <Link href={link.href} className="hover:text-gray-400">
-                {link.label}
-              </Link>
-              {link.submenu && dropdown === link.label && (
-                <div className="absolute left-0 w-48 bg-gray-800 shadow-lg">
-                  {link.submenu.map((sublink) => (
-                    <Link
-                      key={sublink.href}
-                      href={sublink.href}
-                      className="block px-4 py-2 hover:bg-gray-700 hover:text-white"
-                    >
-                      {sublink.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+              <DropdownItem
+                key="autoscaling"
+                description="ACME scales apps to meet user demand, automagically, based on load."
+                startContent={icons.scale}
+              >
+                Autoscaling
+              </DropdownItem>
+              <DropdownItem
+                key="usage_metrics"
+                description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+                startContent={icons.activity}
+              >
+                Usage Metrics
+              </DropdownItem>
+              <DropdownItem
+                key="production_ready"
+                description="ACME runs on ACME, join us and others serving requests at web scale."
+                startContent={icons.flash}
+              >
+                Production Ready
+              </DropdownItem>
+              <DropdownItem
+                key="99_uptime"
+                description="Applications stay on the grid with high availability and high uptime guarantees."
+                startContent={icons.server}
+              >
+                +99% Uptime
+              </DropdownItem>
+              <DropdownItem
+                key="supreme_support"
+                description="Overcome any challenge with a supporting team ready to respond."
+                startContent={icons.user}
+              >
+                +Supreme Support
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </div>
-        <div className="md:hidden">
-          {/* Mobile menu toggle button */}
-          <button
-            type="button"
-            className="rounded-md bg-gray-800 p-2 hover:bg-gray-700"
-            onClick={handleToggleMenu}
-          >
-            Menu
-          </button>
-        </div>
-      </div>
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="bg-gray-800 p-4 md:hidden">
-          {links.map((link) => (
-            <div key={link.href}>
-              <Link href={link.href} className="block py-2 hover:text-gray-400">
-                {link.label}
-              </Link>
-              {link.submenu && (
-                <div className="pl-4">
-                  {link.submenu.map((sublink) => (
-                    <Link
-                      key={sublink.href}
-                      href={sublink.href}
-                      className="block py-2 hover:text-gray-400"
-                    >
-                      {sublink.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
-    </nav>
-  )
-}
+        <NavbarItem isActive>
+          <Link href="#" aria-current="page">
+            Customers
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="text-foreground" href="#">
+            Integrations
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden lg:flex">
+          <Link href="#">Login</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button as={Link} color="primary" href="#" variant="flat">
+            Sign Up
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+    </Navbar>
+  );
+};
 
-export default Navbar
+export default Navbar1;

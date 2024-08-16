@@ -1,12 +1,12 @@
-import React from "react";
+import React from "react"
 
 // Define the prop types for the icon components
 interface IconProps {
-  fill?: string;
-  size?: number;
-  height?: number;
-  width?: number;
-  [key: string]: any; // Allow any other prop to be passed
+  fill?: string
+  size?: number
+  height?: number
+  width?: number
+  [key: string]: any // Allow any other prop to be passed
 }
 
 export const ChevronDown: React.FC<IconProps> = ({
@@ -34,8 +34,8 @@ export const ChevronDown: React.FC<IconProps> = ({
         strokeWidth={1.5}
       />
     </svg>
-  );
-};
+  )
+}
 
 export const Lock: React.FC<IconProps> = ({
   fill = "currentColor",
@@ -85,8 +85,8 @@ export const Lock: React.FC<IconProps> = ({
         />
       </g>
     </svg>
-  );
-};
+  )
+}
 
 export const Activity: React.FC<IconProps> = ({
   fill = "currentColor",
@@ -116,8 +116,8 @@ export const Activity: React.FC<IconProps> = ({
         <path d="M20.756 9.269a20.809 20.809 0 01.194 3.034c0 6.938-2.312 9.25-9.25 9.25s-9.25-2.312-9.25-9.25 2.313-9.25 9.25-9.25a20.931 20.931 0 012.983.187" />
       </g>
     </svg>
-  );
-};
+  )
+}
 
 export const Flash: React.FC<IconProps> = ({
   fill = "currentColor",
@@ -144,8 +144,8 @@ export const Flash: React.FC<IconProps> = ({
         strokeWidth={1.5}
       />
     </svg>
-  );
-};
+  )
+}
 
 export const Server: React.FC<IconProps> = ({
   fill = "currentColor",
@@ -171,8 +171,8 @@ export const Server: React.FC<IconProps> = ({
         strokeWidth={1.5}
       />
     </svg>
-  );
-};
+  )
+}
 
 export const TagUser: React.FC<IconProps> = ({
   fill = "currentColor",
@@ -206,8 +206,8 @@ export const TagUser: React.FC<IconProps> = ({
         strokeWidth={1.5}
       />
     </svg>
-  );
-};
+  )
+}
 
 export const Scale: React.FC<IconProps> = ({
   fill = "currentColor",
@@ -240,5 +240,5 @@ export const Scale: React.FC<IconProps> = ({
         strokeWidth={1.5}
       />
     </svg>
-  );
-};
+  )
+}
